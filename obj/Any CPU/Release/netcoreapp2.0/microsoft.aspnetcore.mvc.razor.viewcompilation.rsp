@@ -1,0 +1,12 @@
+D:\software\NetCore\lan\lan
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=lan
+--content-root=D:\software\NetCore\lan\lan
+--file=D:\software\NetCore\lan\lan\Views\Home\About.cshtml
+--file=D:\software\NetCore\lan\lan\Views\Home\Contact.cshtml
+--file=D:\software\NetCore\lan\lan\Views\Home\Index.cshtml
+--file=D:\software\NetCore\lan\lan\Views\Shared\Error.cshtml
+--file=D:\software\NetCore\lan\lan\Views\Shared\_Layout.cshtml
+--file=D:\software\NetCore\lan\lan\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=D:\software\NetCore\lan\lan\Views\_ViewImports.cshtml
+--file=D:\software\NetCore\lan\lan\Views\_ViewStart.cshtml

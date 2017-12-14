@@ -1,0 +1,10 @@
+D:\software\NetCore\lan\lan\bin\Any CPU\Release\netcoreapp2.0\lan.deps.json
+D:\software\NetCore\lan\lan\bin\Any CPU\Release\netcoreapp2.0\lan.runtimeconfig.json
+D:\software\NetCore\lan\lan\bin\Any CPU\Release\netcoreapp2.0\lan.runtimeconfig.dev.json
+D:\software\NetCore\lan\lan\bin\Any CPU\Release\netcoreapp2.0\lan.dll
+D:\software\NetCore\lan\lan\bin\Any CPU\Release\netcoreapp2.0\lan.pdb
+D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.csproj.CoreCompileInputs.cache
+D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfoInputs.cache
+D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfo.cs
+D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.dll
+D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.pdb

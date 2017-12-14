@@ -1,0 +1,12 @@
+/root/Desktop/lan/lan
+--output-path=obj/Debug/netcoreapp2.0/
+--application-name=lan
+--content-root=/root/Desktop/lan/lan
+--file=/root/Desktop/lan/lan/Views/Home/About.cshtml
+--file=/root/Desktop/lan/lan/Views/Home/Contact.cshtml
+--file=/root/Desktop/lan/lan/Views/Home/Index.cshtml
+--file=/root/Desktop/lan/lan/Views/Shared/Error.cshtml
+--file=/root/Desktop/lan/lan/Views/Shared/_Layout.cshtml
+--file=/root/Desktop/lan/lan/Views/Shared/_ValidationScriptsPartial.cshtml
+--file=/root/Desktop/lan/lan/Views/_ViewImports.cshtml
+--file=/root/Desktop/lan/lan/Views/_ViewStart.cshtml
