@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a7aa306d2e264d92ffef06296341a5e29b6e41eb"
+    "signature": "94e6151809d6785415153dd403f1199c1748d41c"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "lan/1.0.0": {
         "dependencies": {
+          "Gray.Microsoft.AspNetCore.SignalR.Server": "0.2.0-alpha1",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
@@ -31,6 +32,49 @@
         },
         "compile": {
           "lan.dll": {}
+        }
+      },
+      "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
+          "System.Threading.Timer": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        }
+      },
+      "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1": {
+        "dependencies": {
+          "Gray.Microsoft.AspNetCore.SignalR.Messaging": "0.2.0",
+          "Microsoft.AspNetCore.DataProtection": "2.0.0",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.0.0",
+          "Microsoft.Extensions.DependencyModel": "2.0.0",
+          "Newtonsoft.Json": "10.0.1",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -3977,6 +4021,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f6ADNhKb2bJEIOL8kCR9ypGfKjiUa21KtIAa2mM2zjDNbddBgLRYE5k05aqTB7KqivFwp1MqhrJwiMrGsqNF8w==",
+      "path": "gray.microsoft.aspnetcore.signalr.messaging/0.2.0",
+      "hashPath": "gray.microsoft.aspnetcore.signalr.messaging.0.2.0.nupkg.sha512"
+    },
+    "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MyB2gibCua7nxjFaP+PHO/LdgV4xkJRtDFKrN5MNOcycky9yhCG3JtxFbm3UFpo/24GEmrmSgzC0pxIIwr3MVg==",
+      "path": "gray.microsoft.aspnetcore.signalr.server/0.2.0-alpha1",
+      "hashPath": "gray.microsoft.aspnetcore.signalr.server.0.2.0-alpha1.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",

@@ -2,6 +2,51 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "Microsoft.Extensions.Logging": "1.1.0-alpha1-22144",
+          "Microsoft.Extensions.Options": "1.1.0-alpha1-22144",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading.Thread": "4.0.0",
+          "System.Threading.ThreadPool": "4.0.10",
+          "System.Threading.Timer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        }
+      },
+      "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1": {
+        "type": "package",
+        "dependencies": {
+          "Gray.Microsoft.AspNetCore.SignalR.Messaging": "0.2.0",
+          "Microsoft.AspNetCore.DataProtection": "1.1.0-alpha1-22144",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.0-alpha1-22144",
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.0-alpha1-22144",
+          "Microsoft.Extensions.DependencyModel": "1.0.1-beta-003206",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Runtime.Serialization.Primitives": "4.1.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -4750,6 +4795,28 @@
     }
   },
   "libraries": {
+    "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0": {
+      "sha512": "f6ADNhKb2bJEIOL8kCR9ypGfKjiUa21KtIAa2mM2zjDNbddBgLRYE5k05aqTB7KqivFwp1MqhrJwiMrGsqNF8w==",
+      "type": "package",
+      "path": "gray.microsoft.aspnetcore.signalr.messaging/0.2.0",
+      "files": [
+        "gray.microsoft.aspnetcore.signalr.messaging.0.2.0.nupkg.sha512",
+        "gray.microsoft.aspnetcore.signalr.messaging.nuspec",
+        "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll",
+        "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll"
+      ]
+    },
+    "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1": {
+      "sha512": "MyB2gibCua7nxjFaP+PHO/LdgV4xkJRtDFKrN5MNOcycky9yhCG3JtxFbm3UFpo/24GEmrmSgzC0pxIIwr3MVg==",
+      "type": "package",
+      "path": "gray.microsoft.aspnetcore.signalr.server/0.2.0-alpha1",
+      "files": [
+        "gray.microsoft.aspnetcore.signalr.server.0.2.0-alpha1.nupkg.sha512",
+        "gray.microsoft.aspnetcore.signalr.server.nuspec",
+        "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Server.dll",
+        "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -12528,12 +12595,13 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Gray.Microsoft.AspNetCore.SignalR.Server >= 0.2.0-alpha1",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lanlichao\\.nuget\\packages\\": {},
+    "C:\\Users\\lan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12542,17 +12610,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\software\\NetCore\\lan\\lan\\lan.csproj",
+      "projectUniqueName": "F:\\Code\\ChatOnLine\\lan.csproj",
       "projectName": "lan",
-      "projectPath": "D:\\software\\NetCore\\lan\\lan\\lan.csproj",
-      "packagesPath": "C:\\Users\\lanlichao\\.nuget\\packages\\",
-      "outputPath": "D:\\software\\NetCore\\lan\\lan\\obj\\",
+      "projectPath": "F:\\Code\\ChatOnLine\\lan.csproj",
+      "packagesPath": "C:\\Users\\lan\\.nuget\\packages\\",
+      "outputPath": "F:\\Code\\ChatOnLine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lanlichao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12560,7 +12628,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://10.129.8.151/nuget/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12577,6 +12644,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Gray.Microsoft.AspNetCore.SignalR.Server": {
+            "target": "Package",
+            "version": "[0.2.0-alpha1, )"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.0, )"
@@ -12594,5 +12665,67 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Gray.Microsoft.AspNetCore.SignalR.Server 0.2.0-alpha1 依赖于 Microsoft.AspNetCore.DataProtection (>= 1.1.0-alpha1-22144)，但找不到 Microsoft.AspNetCore.DataProtection 1.1.0-alpha1-22144。 已解决 Microsoft.AspNetCore.DataProtection 1.1.0-preview1-final 的近似最佳匹配。 ",
+      "libraryId": "Microsoft.AspNetCore.DataProtection",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Gray.Microsoft.AspNetCore.SignalR.Server 0.2.0-alpha1 依赖于 Microsoft.AspNetCore.Hosting.Abstractions (>= 1.1.0-alpha1-22144)，但找不到 Microsoft.AspNetCore.Hosting.Abstractions 1.1.0-alpha1-22144。 已解决 Microsoft.AspNetCore.Hosting.Abstractions 1.1.0-preview1-final 的近似最佳匹配。 ",
+      "libraryId": "Microsoft.AspNetCore.Hosting.Abstractions",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Gray.Microsoft.AspNetCore.SignalR.Server 0.2.0-alpha1 依赖于 Microsoft.AspNetCore.Http.Extensions (>= 1.1.0-alpha1-22144)，但找不到 Microsoft.AspNetCore.Http.Extensions 1.1.0-alpha1-22144。 已解决 Microsoft.AspNetCore.Http.Extensions 1.1.0-preview1-final 的近似最佳匹配。 ",
+      "libraryId": "Microsoft.AspNetCore.Http.Extensions",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Gray.Microsoft.AspNetCore.SignalR.Server 0.2.0-alpha1 依赖于 Microsoft.Extensions.DependencyModel (>= 1.0.1-beta-003206)，但找不到 Microsoft.Extensions.DependencyModel 1.0.1-beta-003206。 已解决 Microsoft.Extensions.DependencyModel 1.0.3 的近似最佳匹配。 ",
+      "libraryId": "Microsoft.Extensions.DependencyModel",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Gray.Microsoft.AspNetCore.SignalR.Messaging 0.2.0 依赖于 Microsoft.Extensions.Logging (>= 1.1.0-alpha1-22144)，但找不到 Microsoft.Extensions.Logging 1.1.0-alpha1-22144。 已解决 Microsoft.Extensions.Logging 1.1.0-preview1-final 的近似最佳匹配。 ",
+      "libraryId": "Microsoft.Extensions.Logging",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Gray.Microsoft.AspNetCore.SignalR.Messaging 0.2.0 依赖于 Microsoft.Extensions.Options (>= 1.1.0-alpha1-22144)，但找不到 Microsoft.Extensions.Options 1.1.0-alpha1-22144。 已解决 Microsoft.Extensions.Options 1.1.0-preview1-final 的近似最佳匹配。 ",
+      "libraryId": "Microsoft.Extensions.Options",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }
