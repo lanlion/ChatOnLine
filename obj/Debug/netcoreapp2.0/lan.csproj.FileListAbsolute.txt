@@ -24,9 +24,9 @@ F:\Code\ChatOnLine\bin\Debug\netcoreapp2.0\lan.runtimeconfig.json
 F:\Code\ChatOnLine\bin\Debug\netcoreapp2.0\lan.runtimeconfig.dev.json
 F:\Code\ChatOnLine\bin\Debug\netcoreapp2.0\lan.dll
 F:\Code\ChatOnLine\bin\Debug\netcoreapp2.0\lan.pdb
-F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.csprojResolveAssemblyReference.cache
 F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.csproj.CoreCompileInputs.cache
 F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.AssemblyInfoInputs.cache
 F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.AssemblyInfo.cs
 F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.dll
 F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.pdb
+F:\Code\ChatOnLine\obj\Debug\netcoreapp2.0\lan.csprojResolveAssemblyReference.cache

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using lan.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -39,13 +40,26 @@ namespace lan
 
             app.UseStaticFiles();
 
+
+            app.UseSignalR(
+                routes =>
+                {
+                    routes.MapHub<Chat>("hubs");
+                }
+                );
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Chat}/{action=Index}/{id?}");
             });
-            app.UseSignalR();
+            //var webSocketOptions = new WebSocketOptions()
+            //{
+            //    KeepAliveInterval = TimeSpan.FromSeconds(120),
+            //    ReceiveBufferSize = 4 * 1024
+            //};
+          //  app.UseWebSockets(webSocketOptions);
+            //app.UseWebSockets();
         }
     }
 }
