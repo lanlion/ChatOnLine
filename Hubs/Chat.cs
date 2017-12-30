@@ -1,54 +1,54 @@
-﻿//using Microsoft.AspNetCore.SignalR;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.SignalR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-//namespace lan.Hubs
-//{
-//    public class Chat : Hub
-//    {
-//        public override async Task OnConnectedAsync()
-//        {
-//           await  base.OnConnectedAsync();
-         
-//            await Clients.All.InvokeAsync("Send", $"{Context.ConnectionId} joined");
-           
-//        }
+namespace lan.Hubs
+{
+    public class Chat : Hub
+    {
+        public override async Task OnConnectedAsync()
+        {
+           // await base.OnConnectedAsync();
 
-//        public override async Task OnDisconnectedAsync(Exception ex)
-//        {
-//            await base.OnDisconnectedAsync(ex);
-//            await Clients.All.InvokeAsync("Send", $"{Context.ConnectionId} left");
-//        }
+            await Clients.All.InvokeAsync("Send", $"{Context.ConnectionId} joined");
 
-//        public Task Send(string message)
-//        {
-//            return Clients.All.InvokeAsync("Send", $"{Context.ConnectionId}: {message}");
-//        }
+        }
 
-//        public Task SendToGroup(string groupName, string message)
-//        {
-//            return Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId}@{groupName}: {message}");
-//        }
+        public override async Task OnDisconnectedAsync(Exception ex)
+        {
+          //  await base.OnDisconnectedAsync(ex);
+            await Clients.All.InvokeAsync("Send", $"{Context.ConnectionId} left");
+        }
 
-//        public async Task JoinGroup(string groupName)
-//        {
-//            await Groups.AddAsync(Context.ConnectionId, groupName);
+        public Task Send(string message)
+        {
+            return Clients.All.InvokeAsync("Send", $"{Context.ConnectionId}: {message}");
+        }
 
-//            await Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId} joined {groupName}");
-//        }
+        public Task SendToGroup(string groupName, string message)
+        {
+            return Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId}@{groupName}: {message}");
+        }
 
-//        public async Task LeaveGroup(string groupName)
-//        {
-//            await Groups.RemoveAsync(Context.ConnectionId, groupName);
+        public async Task JoinGroup(string groupName)
+        {
+            await Groups.AddAsync(Context.ConnectionId, groupName);
 
-//            await Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId} left {groupName}");
-//        }
+            await Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId} joined {groupName}");
+        }
 
-//        public Task Echo(string message)
-//        {
-//            return Clients.Client(Context.ConnectionId).InvokeAsync("Send", $"{Context.ConnectionId}: {message}");
-//        }
-//    }
-//}
+        public async Task LeaveGroup(string groupName)
+        {
+            await Groups.RemoveAsync(Context.ConnectionId, groupName);
+
+            await Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId} left {groupName}");
+        }
+
+        public Task Echo(string message)
+        {
+            return Clients.Client(Context.ConnectionId).InvokeAsync("Send", $"{Context.ConnectionId}: {message}");
+        }
+    }
+}
