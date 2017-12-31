@@ -1,0 +1,81 @@
+﻿@{ 
+    ViewData["Title"] = "聊天室";
+}
+<ul id="message-list"></ul>
+<input type="text" name="msg" value="" id="msg" />
+<input type="button" name="btnSend" value="发送" id="btnSend" />
+<script src="~/chat/signalr-client.js?v=1"></script>
+<script src="~/chat/utils.js?v=2"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        var connection;
+        var isConnected = false;
+        var groupName = 'lan_chat';
+        let transportType = signalR.TransportType[getParameterByName('transport')] || signalR.TransportType.WebSockets;
+        let http = new signalR.HttpConnection(`http://${document.location.host}/hubs`, { transport: transportType });
+        connection = new signalR.HubConnection(http);
+        connection.on('Send', msg => {
+            addLine('message-list', msg);
+
+        });
+        connection.onClosed = e => {
+            if (e) {
+                addLine('message-list', 'Connection closed with error: ' + e, 'red');
+            }
+            else {
+                addLine('message-list', 'Disconnected', 'green');
+            }
+        }
+
+        connection.start()
+            .then(() => {
+                isConnected = true;
+                //addLine('message-list', '您已成功加入聊天室', 'green');
+                invoke(connection, 'JoinGroup', groupName);
+            })
+            .catch(err => {
+                addLine('message-list', err, 'red');
+            });
+
+        function invoke(connection, method, ...args) {
+            if (!isConnected) {
+                return;
+            }
+            var argsArray = Array.prototype.slice.call(arguments);
+            connection.invoke.apply(connection, argsArray.slice(1))
+                .then(result => {
+                    console.log("invocation completed successfully: " + (result === null ? '(null)' : result));
+
+                    if (result) {
+                        addLine('message-list', result);
+                    }
+                })
+                .catch(err => {
+                    addLine('message-list', err, 'red');
+                });
+        }
+
+        function getText(id) {
+            var ele = document.getElementById(id);
+            if (ele) {
+                return ele.value;
+            }
+        }
+        function getTextAndSend(id) {
+            var ele = document.getElementById(id);
+            if (ele) {
+                invoke(connection, 'SendToGroup', groupName, ele.value);
+                ele.value = "";
+            }
+            
+
+        }
+        click('btnSend', event => {
+           
+            getTextAndSend("msg");
+        });
+
+    });
+   
+</script>

@@ -8,3 +8,14 @@ D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfoIn
 D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfo.cs
 D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.dll
 D:\software\NetCore\lan\lan\obj\Any CPU\Release\netcoreapp2.0\lan.pdb
+F:\Code\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.deps.json
+F:\Code\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.runtimeconfig.json
+F:\Code\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.runtimeconfig.dev.json
+F:\Code\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.dll
+F:\Code\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.pdb
+F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.csproj.CoreCompileInputs.cache
+F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfoInputs.cache
+F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfo.cs
+F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.dll
+F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.pdb
+F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.csprojResolveAssemblyReference.cache

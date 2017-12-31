@@ -43,7 +43,7 @@ namespace lan
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Chat}/{action=Index}/{id?}");
+                    template: "{controller=Chat}/{action=Home}/{id?}");
             });
             app.UseSignalR(routes =>  // <-- SignalR
             {
