@@ -12,6 +12,8 @@
             <ul></ul>
         </div>
         <div id="div_chat" class="col-md-3 pull-left">
+            <script>document.write("上线时间：" + (new Date()).toLocaleTimeString())</script>
+            <div id="timeNow"></div>
             <ul id="message-list"></ul>
             <div id="div_uname">
                 <label for="u_name">输入昵称，加入聊天室</label><br>
@@ -38,6 +40,7 @@
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
     $(function () {
+       
         var connection;
         var isConnected = false;
         var groupName = 'lan_chat';
@@ -45,6 +48,7 @@
         let transportType = signalR.TransportType[getParameterByName('transport')] || signalR.TransportType.WebSockets;
         let http = new signalR.HttpConnection(`http://${document.location.host}/hubs`, { transport: transportType });
         connection = new signalR.HubConnection(http);
+
         connection.on('Send', msg => {
             addLine('message-list', msg);
            
@@ -56,8 +60,7 @@
                 document.getElementById("music_send").play();
             }
                                      
-        });
-       
+        });      
         connection.on('LoadUser', json => {
             var list = JSON.parse(json);
             if (list) {
@@ -78,6 +81,9 @@
             }
             else {
                 addLine('message-list', 'Disconnected', 'green');
+                setTimeout(function () {
+                    connection.start();
+                },1000);
             }
         }
 
@@ -90,7 +96,7 @@
             .catch(err => {
                 addLine('message-list', err, 'red');
             });
-
+       
         function invoke(connection, method, ...args) {
             if (!isConnected) {
                 return;
@@ -145,6 +151,11 @@
 
 
         });
+
+        //时间
+        setInterval(function () {
+            $("#timeNow").html("当前时间：" + (new Date()).toLocaleTimeString());
+        }, 1000);
     });
 
 </script>
