@@ -1,32 +1,38 @@
 ﻿@{
     ViewData["Title"] = "聊天室";
 }
+<audio controls="controls" id="music_send" hidden="hidden">
+    <source src="~/music/water_collected.mp3" type="audio/mp3">
+    <source src="~/music/water_collected.ogg" type="audio/ogg">
+</audio>
 
-<div id="div_chat">
-    <ul id="message-list"></ul>
-    <div id="div_uname">
-        <label for="u_name">输入您的昵称</label>
-        <input type="text" name="u_name" value="" id="u_name" />
-        <input type="button" name="join" value="加入聊天室" id="join" />
-        <br>
+<div class="container body-content">
+    <div class="row">
+        <div id="div_userlist" class="col-md-3 pull-right">
+            <ul></ul>
+        </div>
+        <div id="div_chat" class="col-md-3 pull-left">
+            <ul id="message-list"></ul>
+            <div id="div_uname">
+                <label for="u_name">输入昵称，加入聊天室</label><br>
+                <input type="text" name="u_name" value="" id="u_name" style="width:100px" />
+
+                <input type="button" name="join" value="加入聊天室" id="join" />
+
+
+            </div>
+
+            <div id="div_send" style="display:none">
+                <label for="msg">请输入</label><br>
+                <input type="text" name="msg" value="" id="msg" style="width:100px" /><br><br>
+                <input type="button" name="btnSend" value="发送" id="btnSend" />
+            </div>
+
+        </div>
+
 
     </div>
-
-    <div id="div_send" style="display:none">
-        <label for="msg">请输入</label>
-        <input type="text" name="msg" value="" id="msg" />
-        <input type="button" name="btnSend" value="发送" id="btnSend" />
-    </div>
-
 </div>
-
-<div id="div_userlist">
-    <ul>当前在线用户
-        <li>1</li>
-        <li>1</li>
-    </ul>
-</div>
-<link href="~/css/chat.css" rel="stylesheet" />
 <script src="~/chat/signalr-client.js?v=1"></script>
 <script src="~/chat/utils.js?v=2"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -40,8 +46,23 @@
         connection = new signalR.HubConnection(http);
         connection.on('Send', msg => {
             addLine('message-list', msg);
-            debugger;
+            document.getElementById("music_send").play();
         });
+       
+        connection.on('LoadUser', json => {
+            var list = JSON.parse(json);
+            if (list) {
+                var lihtml = "当前在线用户";
+                for (var i = 0; i < list.length; i++) {
+                    lihtml += ('<li>' + list[i].UserName + '</li>');
+                }
+                $("#div_userlist ul").html(lihtml);
+            }
+
+
+        }
+
+        );
         connection.onClosed = e => {
             if (e) {
                 addLine('message-list', 'Connection closed with error: ' + e, 'red');
@@ -87,6 +108,7 @@
         }
         function getTextAndSend(id) {
             var ele = document.getElementById(id);
+           
             if (ele) {
                 invoke(connection, 'SendToGroup', groupName, ele.value);
                 ele.value = "";
@@ -97,6 +119,7 @@
         click('btnSend', event => {
 
             getTextAndSend("msg");
+            document.getElementById("music_send").play();
         });
         click('join', event => {
 
