@@ -39,7 +39,8 @@ namespace lan.Hubs
         {
             var userinfo = OnlineUsers.FirstOrDefault(user => user.ConnectionId == Context.ConnectionId && user.GroupName == groupName);
             if (userinfo == null) return null;
-            return Clients.Group(groupName).InvokeAsync("Send", $"{userinfo.UserName}说: {message}");
+            var msg = new { name=userinfo.UserName,msg= $"{userinfo.UserName}说: {message}" };
+            return Clients.Group(groupName).InvokeAsync("SendWithMusic", Newtonsoft.Json.JsonConvert.SerializeObject(msg));
         }
 
         public async Task JoinGroup(string groupName, string userName)

@@ -41,12 +41,21 @@
         var connection;
         var isConnected = false;
         var groupName = 'lan_chat';
+        var currentUserName;
         let transportType = signalR.TransportType[getParameterByName('transport')] || signalR.TransportType.WebSockets;
         let http = new signalR.HttpConnection(`http://${document.location.host}/hubs`, { transport: transportType });
         connection = new signalR.HubConnection(http);
         connection.on('Send', msg => {
             addLine('message-list', msg);
-            document.getElementById("music_send").play();
+           
+        });
+        connection.on('SendWithMusic', msg => {
+            var jsonmsg = JSON.parse(msg);
+            addLine('message-list', jsonmsg.msg);
+            if (jsonmsg.name != currentUserName) {
+                document.getElementById("music_send").play();
+            }
+                                     
         });
        
         connection.on('LoadUser', json => {
@@ -119,12 +128,13 @@
         click('btnSend', event => {
 
             getTextAndSend("msg");
-            document.getElementById("music_send").play();
+         
         });
         click('join', event => {
 
             var username = getText("u_name");
             if (username) {
+                currentUserName = username;
                 invoke(connection, "JoinGroup", groupName, username)
                 $("#div_uname").hide();
                 $("#div_send").show();
