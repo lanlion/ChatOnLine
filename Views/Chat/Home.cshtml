@@ -1,9 +1,32 @@
-﻿@{ 
+﻿@{
     ViewData["Title"] = "聊天室";
 }
-<ul id="message-list"></ul>
-<input type="text" name="msg" value="" id="msg" />
-<input type="button" name="btnSend" value="发送" id="btnSend" />
+
+<div id="div_chat">
+    <ul id="message-list"></ul>
+    <div id="div_uname">
+        <label for="u_name">输入您的昵称</label>
+        <input type="text" name="u_name" value="" id="u_name" />
+        <input type="button" name="join" value="加入聊天室" id="join" />
+        <br>
+
+    </div>
+
+    <div id="div_send" style="display:none">
+        <label for="msg">请输入</label>
+        <input type="text" name="msg" value="" id="msg" />
+        <input type="button" name="btnSend" value="发送" id="btnSend" />
+    </div>
+
+</div>
+
+<div id="div_userlist">
+    <ul>当前在线用户
+        <li>1</li>
+        <li>1</li>
+    </ul>
+</div>
+<link href="~/css/chat.css" rel="stylesheet" />
 <script src="~/chat/signalr-client.js?v=1"></script>
 <script src="~/chat/utils.js?v=2"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -17,7 +40,7 @@
         connection = new signalR.HubConnection(http);
         connection.on('Send', msg => {
             addLine('message-list', msg);
-
+            debugger;
         });
         connection.onClosed = e => {
             if (e) {
@@ -32,7 +55,7 @@
             .then(() => {
                 isConnected = true;
                 //addLine('message-list', '您已成功加入聊天室', 'green');
-                invoke(connection, 'JoinGroup', groupName);
+
             })
             .catch(err => {
                 addLine('message-list', err, 'red');
@@ -68,14 +91,27 @@
                 invoke(connection, 'SendToGroup', groupName, ele.value);
                 ele.value = "";
             }
-            
+
 
         }
         click('btnSend', event => {
-           
+
             getTextAndSend("msg");
         });
+        click('join', event => {
 
+            var username = getText("u_name");
+            if (username) {
+                invoke(connection, "JoinGroup", groupName, username)
+                $("#div_uname").hide();
+                $("#div_send").show();
+            }
+            else {
+                alert("请输入您的昵称");
+            }
+
+
+        });
     });
-   
+
 </script>

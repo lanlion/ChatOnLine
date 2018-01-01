@@ -8,11 +8,13 @@ namespace lan.Hubs
 {
     public class Chat : Hub
     {
+        public static List<UserInfo> OnlineUsers = new List<UserInfo>();
         public override async Task OnConnectedAsync()
         {
             await base.OnConnectedAsync();
-          
-           // await Clients.All.InvokeAsync("Send", $"您的id是：{Context.ConnectionId} ");
+           
+
+            // await Clients.All.InvokeAsync("Send", $"您的id是：{Context.ConnectionId} ");
 
         }
 
@@ -30,21 +32,30 @@ namespace lan.Hubs
 
         public Task SendToGroup(string groupName, string message)
         {
-            return Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId}说: {message}");
+            var userinfo = OnlineUsers.FirstOrDefault(user=>user.ConnectionId== Context.ConnectionId);
+            if (userinfo == null) return null;
+            return Clients.Group(groupName).InvokeAsync("Send", $"{userinfo.UserName}说: {message}");
         }
 
-        public async Task JoinGroup(string groupName)
+        public async Task JoinGroup(string groupName,string userName)
         {
             await Groups.AddAsync(Context.ConnectionId, groupName);
 
-            await Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId} 加入聊天室");
+            await Clients.Group(groupName).InvokeAsync("Send", $"{userName} 加入聊天室");
+            OnlineUsers.Add(new UserInfo
+            {
+                ConnectionId = Context.ConnectionId,
+                UserName = userName,
+              
+            });
         }
 
         public async Task LeaveGroup(string groupName)
         {
             await Groups.RemoveAsync(Context.ConnectionId, groupName);
-
-            await Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId} 离开聊天室");
+            var userinfo = OnlineUsers.FirstOrDefault(user => user.ConnectionId == Context.ConnectionId);
+          
+            await Clients.Group(groupName).InvokeAsync("Send", $"{userinfo.UserName} 离开聊天室");
         }
 
         public Task Echo(string message)

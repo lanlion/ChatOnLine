@@ -7,7 +7,9 @@ namespace lan.Hubs
 {
     public class UserInfo
     {
-        private List<UserInfo> _userList;
-        public List<UserInfo> userList;
+        public string ConnectionId { get; set; }
+        public string UserId { get; set; }
+        public string UserName { get; set; }
+
     }
 }
