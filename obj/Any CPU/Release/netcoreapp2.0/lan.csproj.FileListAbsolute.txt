@@ -19,3 +19,14 @@ F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfo.cs
 F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.dll
 F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.pdb
 F:\Code\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.csprojResolveAssemblyReference.cache
+D:\software\NetCore\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.deps.json
+D:\software\NetCore\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.runtimeconfig.json
+D:\software\NetCore\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.runtimeconfig.dev.json
+D:\software\NetCore\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.dll
+D:\software\NetCore\ChatOnLine\bin\Any CPU\Release\netcoreapp2.0\lan.pdb
+D:\software\NetCore\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.csprojResolveAssemblyReference.cache
+D:\software\NetCore\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.csproj.CoreCompileInputs.cache
+D:\software\NetCore\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfoInputs.cache
+D:\software\NetCore\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.AssemblyInfo.cs
+D:\software\NetCore\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.dll
+D:\software\NetCore\ChatOnLine\obj\Any CPU\Release\netcoreapp2.0\lan.pdb

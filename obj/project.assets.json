@@ -13544,7 +13544,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lan\\.nuget\\packages\\": {},
+    "C:\\Users\\lanlichao\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13553,18 +13553,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "F:\\Code\\ChatOnLine\\lan.csproj",
+      "projectUniqueName": "D:\\software\\NetCore\\ChatOnLine\\lan.csproj",
       "projectName": "lan",
-      "projectPath": "F:\\Code\\ChatOnLine\\lan.csproj",
-      "packagesPath": "C:\\Users\\lan\\.nuget\\packages\\",
-      "outputPath": "F:\\Code\\ChatOnLine\\obj\\",
+      "projectPath": "D:\\software\\NetCore\\ChatOnLine\\lan.csproj",
+      "packagesPath": "C:\\Users\\lanlichao\\.nuget\\packages\\",
+      "outputPath": "D:\\software\\NetCore\\ChatOnLine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "F:\\Code\\ChatOnLine\\NuGet.Config",
-        "C:\\Users\\lan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\software\\NetCore\\ChatOnLine\\NuGet.Config",
+        "C:\\Users\\lanlichao\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

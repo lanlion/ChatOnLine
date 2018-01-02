@@ -1,20 +1,16 @@
 ﻿@{
     ViewData["Title"] = "聊天室";
 }
-<audio controls="controls" id="music_send" hidden="hidden">
-    <source src="~/music/water_collected.mp3" type="audio/mp3">
-    <source src="~/music/water_collected.ogg" type="audio/ogg">
-</audio>
 
 <div class="container body-content">
     <div class="row">
-        <div id="div_userlist" class="col-md-3 pull-right">
+        <div id="div_userlist" class="col-md-3 pull-right" >
             <ul></ul>
         </div>
         <div id="div_chat" class="col-md-3 pull-left">
             <script>document.write("上线时间：" + (new Date()).toLocaleTimeString())</script>
             <div id="timeNow"></div>
-            <ul id="message-list"></ul>
+            <ul id="message-list" style="overflow-y:auto; max-height:160px" class="col-md-3 pull-left"></ul>
             <div id="div_uname">
                 <label for="u_name">输入昵称，加入聊天室</label><br>
                 <input type="text" name="u_name" value="" id="u_name" style="width:100px" />
@@ -35,6 +31,10 @@
 
     </div>
 </div>
+<audio controls="controls" id="music_send" hidden="hidden">
+    <source src="~/music/water_collected.mp3" type="audio/mp3">
+    <source src="~/music/water_collected.ogg" type="audio/ogg">
+</audio>
 <script src="~/chat/signalr-client.js?v=1"></script>
 <script src="~/chat/utils.js?v=2"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -81,9 +81,7 @@
             }
             else {
                 addLine('message-list', 'Disconnected', 'green');
-                setTimeout(function () {
-                    connection.start();
-                },1000);
+              
             }
         }
 

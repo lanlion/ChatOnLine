@@ -1,11 +1,11 @@
-F:\Code\ChatOnLine
+D:\software\NetCore\ChatOnLine
 --output-path=obj\Any CPU\Release\netcoreapp2.0\
 --application-name=lan
---content-root=F:\Code\ChatOnLine
---file=F:\Code\ChatOnLine\Views\Chat\Home.cshtml
---file=F:\Code\ChatOnLine\Views\Chat\Index.cshtml
---file=F:\Code\ChatOnLine\Views\Shared\Error.cshtml
---file=F:\Code\ChatOnLine\Views\Shared\_Layout.cshtml
---file=F:\Code\ChatOnLine\Views\Shared\_ValidationScriptsPartial.cshtml
---file=F:\Code\ChatOnLine\Views\_ViewImports.cshtml
---file=F:\Code\ChatOnLine\Views\_ViewStart.cshtml
+--content-root=D:\software\NetCore\ChatOnLine
+--file=D:\software\NetCore\ChatOnLine\Views\Chat\Home.cshtml
+--file=D:\software\NetCore\ChatOnLine\Views\Chat\Index.cshtml
+--file=D:\software\NetCore\ChatOnLine\Views\Shared\Error.cshtml
+--file=D:\software\NetCore\ChatOnLine\Views\Shared\_Layout.cshtml
+--file=D:\software\NetCore\ChatOnLine\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=D:\software\NetCore\ChatOnLine\Views\_ViewImports.cshtml
+--file=D:\software\NetCore\ChatOnLine\Views\_ViewStart.cshtml
