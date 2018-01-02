@@ -28,4 +28,5 @@ function addLine(listId, line, color) {
     }
     child.innerText = line;
     document.getElementById(listId).appendChild(child);
+    child.scrollIntoView();
 }

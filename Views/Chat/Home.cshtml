@@ -4,43 +4,45 @@
 
 <div class="container body-content">
     <div class="row">
-        <div id="div_userlist" class="col-md-3 pull-right" >
-            <ul></ul>
-        </div>
-        <div id="div_chat" class="col-md-3 pull-left">
-            <script>document.write("上线时间：" + (new Date()).toLocaleTimeString())</script>
-            <div id="timeNow"></div>
-            <ul id="message-list" style="overflow-y:auto; max-height:160px" class="col-md-3 pull-left"></ul>
+        <div>
+            <div  >
+                <ul id="div_userlist" class="col-md-3 pull-right"></ul>
+                <script>document.write("上线时间：" + (new Date()).toLocaleTimeString())</script>
+                <div id="timeNow"></div>
+                <ul id="message-list" style="overflow-y:auto; max-height:220px" class="col-md-3 pull-left"></ul>
+                <br>
+            </div>
             <div id="div_uname">
-                <label for="u_name">输入昵称，加入聊天室</label><br>
+                <br>  <label for="u_name">输入昵称，加入聊天室</label><br>
                 <input type="text" name="u_name" value="" id="u_name" style="width:100px" />
 
                 <input type="button" name="join" value="加入聊天室" id="join" />
 
 
             </div>
+            <br>
 
-            <div id="div_send" style="display:none">
-                <label for="msg">请输入</label><br>
-                <input type="text" name="msg" value="" id="msg" style="width:100px" /><br><br>
-                <input type="button" name="btnSend" value="发送" id="btnSend" />
-            </div>
 
         </div>
 
 
     </div>
 </div>
+<div id="div_send" style="display:none;" class="col-md-3">
+    <br> <label for="msg">请输入</label><br>
+    <input type="text" name="msg" value="" id="msg" style="width:100px" /><br><br>
+    <input type="button" name="btnSend" value="发送" id="btnSend" />
+</div>
 <audio controls="controls" id="music_send" hidden="hidden">
     <source src="~/music/water_collected.mp3" type="audio/mp3">
     <source src="~/music/water_collected.ogg" type="audio/ogg">
 </audio>
 <script src="~/chat/signalr-client.js?v=1"></script>
-<script src="~/chat/utils.js?v=2"></script>
+<script src="~/chat/utils.js?v=5"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
     $(function () {
-       
+
         var connection;
         var isConnected = false;
         var groupName = 'lan_chat';
@@ -51,7 +53,8 @@
 
         connection.on('Send', msg => {
             addLine('message-list', msg);
-           
+            
+
         });
         connection.on('SendWithMusic', msg => {
             var jsonmsg = JSON.parse(msg);
@@ -59,8 +62,8 @@
             if (jsonmsg.name != currentUserName) {
                 document.getElementById("music_send").play();
             }
-                                     
-        });      
+          
+        });
         connection.on('LoadUser', json => {
             var list = JSON.parse(json);
             if (list) {
@@ -68,7 +71,7 @@
                 for (var i = 0; i < list.length; i++) {
                     lihtml += ('<li>' + list[i].UserName + '</li>');
                 }
-                $("#div_userlist ul").html(lihtml);
+                $("#div_userlist").html(lihtml);
             }
 
 
@@ -81,7 +84,7 @@
             }
             else {
                 addLine('message-list', 'Disconnected', 'green');
-              
+
             }
         }
 
@@ -94,7 +97,7 @@
             .catch(err => {
                 addLine('message-list', err, 'red');
             });
-       
+
         function invoke(connection, method, ...args) {
             if (!isConnected) {
                 return;
@@ -121,7 +124,7 @@
         }
         function getTextAndSend(id) {
             var ele = document.getElementById(id);
-           
+
             if (ele) {
                 invoke(connection, 'SendToGroup', groupName, ele.value);
                 ele.value = "";
@@ -132,7 +135,7 @@
         click('btnSend', event => {
 
             getTextAndSend("msg");
-         
+
         });
         click('join', event => {
 
