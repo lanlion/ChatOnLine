@@ -137,6 +137,13 @@
             getTextAndSend("msg");
 
         });
+        document.onkeydown = function (event) {
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if (e && e.keyCode == 13) {
+                getTextAndSend("msg");
+            }
+        }
+
         click('join', event => {
 
             var username = getText("u_name");
